@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Metrics - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Performance Metrics</h1>
+                    <p class="text-gray-600">Monitor key performance indicators and business metrics</p>
+                </div>
+                <div class="flex space-x-4">
+                    <select class="px-4 py-2 bg-white border rounded-lg">
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                        <option>Last 90 Days</option>
+                        <option>This Year</option>
+                    </select>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                        <i class="fas fa-download mr-2"></i>Export Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPI Overview -->
+            <div class="grid grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Revenue Growth</p>
+                            <h3 class="text-2xl font-bold">+24.5%</h3>
+                            <p class="text-green-500 text-sm"><i class="fas fa-arrow-up"></i> vs last period</p>
+                        </div>
+                        <i class="fas fa-chart-line text-3xl text-blue-500"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Customer Satisfaction</p>
+                            <h3 class="text-2xl font-bold">4.8/5.0</h3>
+                            <p class="text-green-500 text-sm"><i class="fas fa-star"></i> 95% positive</p>
+                        </div>
+                        <i class="fas fa-smile text-3xl text-yellow-500"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Cart Abandonment</p>
+                            <h3 class="text-2xl font-bold">23.4%</h3>
+                            <p class="text-red-500 text-sm"><i class="fas fa-arrow-down"></i> -2.1%</p>
+                        </div>
+                        <i class="fas fa-shopping-cart text-3xl text-red-500"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Average Order Value</p>
+                            <h3 class="text-2xl font-bold">$127.40</h3>
+                            <p class="text-green-500 text-sm"><i class="fas fa-arrow-up"></i> +$12.30</p>
+                        </div>
+                        <i class="fas fa-dollar-sign text-3xl text-green-500"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Revenue Trend -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Revenue Trend</h2>
+                    <canvas id="revenueTrendChart" height="300"></canvas>
+                </div>
+
+                <!-- Customer Acquisition -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Customer Acquisition Channels</h2>
+                    <canvas id="acquisitionChart" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- Detailed Metrics -->
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Conversion Funnel -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Conversion Funnel</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Visits</span>
+                                <span>15,245</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Product Views</span>
+                                <span>8,432</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Add to Cart</span>
+                                <span>3,245</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Purchases</span>
+                                <span>1,432</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Products -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Top Products</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <img src="https://via.placeholder.com/40" alt="Product" class="w-10 h-10 rounded">
+                            <div class="ml-3 flex-1">
+                                <div class="flex justify-between">
+                                    <span class="font-medium">iPhone 13 Pro</span>
+                                    <span class="text-green-500">$45,230</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more products -->
+                    </div>
+                </div>
+
+                <!-- Customer Satisfaction -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Customer Satisfaction</h2>
+                    <div class="space-y-4">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-500">4.8</div>
+                            <div class="text-yellow-500 my-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="text-gray-500">Based on 1,234 reviews</div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <span class="w-8">5★</span>
+                                <div class="flex-1 mx-2">
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <span>75%</span>
+                            </div>
+                            <!-- Add more rating bars -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Revenue Trend Chart
+        const revenueTrendCtx = document.getElementById('revenueTrendChart').getContext('2d');
+        new Chart(revenueTrendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue',
+                    data: [30000, 35000, 32000, 40000, 38000, 45000],
+                    borderColor: 'rgb(59, 130, 246)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Acquisition Chart
+        const acquisitionCtx = document.getElementById('acquisitionChart').getContext('2d');
+        new Chart(acquisitionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Organic Search', 'Direct', 'Social', 'Referral', 'Email'],
+                datasets: [{
+                    data: [35, 25, 20, 15, 5],
+                    backgroundColor: [
+                        'rgb(59, 130, 246)',
+                        'rgb(16, 185, 129)',
+                        'rgb(251, 191, 36)',
+                        'rgb(239, 68, 68)',
+                        'rgb(156, 163, 175)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

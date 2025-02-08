@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+        <div class="p-4">
+            <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+        </div>
+        <!-- Update the sidebar navigation links -->
+<nav class="mt-4">
+    <ul class="space-y-2">
+        <li>
+            <a href="index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-home mr-3"></i>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-box mr-3"></i>
+                Products
+            </a>
+        </li>
+        <li>
+            <a href="orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-shopping-cart mr-3"></i>
+                Orders
+            </a>
+        </li>
+        <li>
+            <a href="customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-users mr-3"></i>
+                Customers
+            </a>
+        </li>
+        <li>
+            <a href="payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-credit-card mr-3"></i>
+                Payments
+            </a>
+        </li>
+        <li>
+            <a href="shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-truck mr-3"></i>
+                Delivery
+            </a>
+        </li>
+        <li>
+            <a href="reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                <i class="fas fa-chart-bar mr-3"></i>
+                Reports
+            </a>
+        </li>
+    </ul>
+</nav>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 p-8">
+        <!-- Top Navigation -->
+        <header class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <input type="text" placeholder="Search..." class="px-4 py-2 border rounded-lg">
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="relative">
+                    <i class="fas fa-bell text-gray-600"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">3</span>
+                </button>
+                <div class="flex items-center space-x-2">
+                    <img src="assets/images/avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full">
+                    <span class="text-gray-700">John Doe</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Stats Cards -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-gray-500 text-sm">Total Sales</h3>
+                <p class="text-2xl font-bold">$24,780</p>
+                <span class="text-green-500 text-sm">+12% from last month</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-gray-500 text-sm">Pending Orders</h3>
+                <p class="text-2xl font-bold">45</p>
+                <span class="text-red-500 text-sm">+5 new orders</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-gray-500 text-sm">Total Customers</h3>
+                <p class="text-2xl font-bold">1,250</p>
+                <span class="text-green-500 text-sm">+3% from last month</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-gray-500 text-sm">Low Stock Items</h3>
+                <p class="text-2xl font-bold">12</p>
+                <span class="text-yellow-500 text-sm">Needs attention</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

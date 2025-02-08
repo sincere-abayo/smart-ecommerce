@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-800">Orders</h1>
+                <div class="flex space-x-4">
+                    <a href="order-details.html" 
+                        class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        <i class="fas fa-info-circle mr-2"></i>Order Details
+                    </a>
+                    <a href="invoice.html" 
+                        class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600">
+                        <i class="fas fa-file-invoice mr-2"></i>View Invoice
+                    </a>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                        <i class="fas fa-file-export mr-2"></i>Export Orders
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Order Summary -->
+                <div class="col-span-2 space-y-6">
+                    <!-- Order Items -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Order Items</h2>
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="text-left py-2">Product</th>
+                                    <th class="text-left py-2">Price</th>
+                                    <th class="text-left py-2">Quantity</th>
+                                    <th class="text-right py-2">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-4">
+                                        <div class="flex items-center">
+                                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df" alt="Product" class="w-12 h-12 rounded">
+                                            <div class="ml-4">
+                                                <div class="font-medium">iPhone 13 Pro</div>
+                                                <div class="text-sm text-gray-500">SKU: IP13-PRO-256</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="py-4">$999.00</td>
+                                    <td class="py-4">1</td>
+                                    <td class="py-4 text-right">$999.00</td>
+                                </tr>
+                                <!-- Add more items as needed -->
+                            </tbody>
+                            <tfoot>
+                                <tr class="border-t">
+                                    <td colspan="3" class="py-4 text-right">Subtotal:</td>
+                                    <td class="py-4 text-right">$999.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="py-2 text-right">Tax (10%):</td>
+                                    <td class="py-2 text-right">$99.90</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="py-2 text-right">Shipping:</td>
+                                    <td class="py-2 text-right">$15.00</td>
+                                </tr>
+                                <tr class="font-bold">
+                                    <td colspan="3" class="py-4 text-right">Total:</td>
+                                    <td class="py-4 text-right">$1,113.90</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- Order Timeline -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Order Timeline</h2>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-check text-white"></i>
+                                    </div>
+                                    <div class="h-full border-l border-gray-300 ml-4"></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-medium">Order Completed</h3>
+                                    <p class="text-sm text-gray-500">Oct 27, 2023 - 15:30</p>
+                                    <p class="text-sm text-gray-600 mt-1">Order has been delivered and marked as complete</p>
+                                </div>
+                            </div>
+                            <!-- Add more timeline items -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Details Sidebar -->
+                <div class="space-y-6">
+                    <!-- Status Card -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Order Status</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm text-gray-600">Status</label>
+                                <select class="mt-1 w-full px-4 py-2 border rounded-lg">
+                                    <option>Pending</option>
+                                    <option>Processing</option>
+                                    <option selected>Completed</option>
+                                    <option>Cancelled</option>
+                                </select>
+                            </div>
+                            <button class="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                                Update Status
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Customer Info -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Customer Information</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/40" alt="Customer" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <div class="font-medium">John Doe</div>
+                                    <div class="text-sm text-gray-500">Customer since Oct 2023</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600">Email</div>
+                                <div>john@example.com</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600">Phone</div>
+                                <div>+1 234 567 890</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Info -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Shipping Information</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-sm text-gray-600">Address</div>
+                                <div>123 Main St</div>
+                                <div>New York, NY 10001</div>
+                                <div>United States</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600">Shipping Method</div>
+                                <div>Standard Shipping</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-600">Tracking Number</div>
+                                <div>1Z999AA1234567890</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

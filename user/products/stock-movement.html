@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Movement - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-800">Stock Movement History</h1>
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        <i class="fas fa-plus mr-2"></i>New Adjustment
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+                <div class="grid grid-cols-5 gap-4">
+                    <input type="text" placeholder="Search by Product/SKU" 
+                        class="px-4 py-2 border rounded-lg">
+                    <select class="px-4 py-2 border rounded-lg">
+                        <option value="">Movement Type</option>
+                        <option>Stock In</option>
+                        <option>Stock Out</option>
+                        <option>Adjustment</option>
+                        <option>Return</option>
+                    </select>
+                    <input type="date" class="px-4 py-2 border rounded-lg" placeholder="Start Date">
+                    <input type="date" class="px-4 py-2 border rounded-lg" placeholder="End Date">
+                    <button class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Movement History Table -->
+            <div class="bg-white rounded-lg shadow-md">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Reference</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Quantity</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Before</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">After</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Sample Movement Records -->
+                        <tr>
+                            <td class="px-6 py-4">2023-10-25</td>
+                            <td class="px-6 py-4">ADJ-001</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img class="h-8 w-8 rounded-full" src="https://via.placeholder.com/32" alt="">
+                                    <span class="ml-2">iPhone 13 Pro</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    Stock In
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-green-600">+50</td>
+                            <td class="px-6 py-4">100</td>
+                            <td class="px-6 py-4">150</td>
+                            <td class="px-6 py-4">New shipment received</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4">2023-10-24</td>
+                            <td class="px-6 py-4">ADJ-002</td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img class="h-8 w-8 rounded-full" src="https://via.placeholder.com/32" alt="">
+                                    <span class="ml-2">MacBook Pro</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                    Stock Out
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-red-600">-5</td>
+                            <td class="px-6 py-4">25</td>
+                            <td class="px-6 py-4">20</td>
+                            <td class="px-6 py-4">Order fulfillment</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Pagination -->
+                <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-700">
+                            Showing 1 to 10 of 50 entries
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border rounded">Previous</button>
+                            <button class="px-3 py-1 border rounded bg-blue-500 text-white">1</button>
+                            <button class="px-3 py-1 border rounded">2</button>
+                            <button class="px-3 py-1 border rounded">3</button>
+                            <button class="px-3 py-1 border rounded">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

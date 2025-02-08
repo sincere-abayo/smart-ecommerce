@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Customer Details</h1>
+                    <p class="text-gray-600">Customer ID: #CUS-2023001</p>
+                </div>
+                <!-- <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        <i class="fas fa-edit mr-2"></i>Edit Profile
+                    </button>
+                </div> -->
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Customer Profile -->
+                <div class="col-span-1">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="text-center mb-6">
+                            <img src="https://via.placeholder.com/120" alt="Customer Avatar" class="mx-auto rounded-full mb-4">
+                            <h2 class="text-xl font-semibold">John Doe</h2>
+                            <p class="text-gray-500">Premium Customer</p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope w-6 text-gray-500"></i>
+                                <span class="ml-2">john@example.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone w-6 text-gray-500"></i>
+                                <span class="ml-2">+1 234 567 890</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt w-6 text-gray-500"></i>
+                                <span class="ml-2">123 Main St, New York, NY 10001</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar w-6 text-gray-500"></i>
+                                <span class="ml-2">Member since Oct 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Stats and Activity -->
+                <div class="col-span-2 space-y-6">
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="text-gray-500">Total Orders</div>
+                            <div class="text-2xl font-bold">24</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="text-gray-500">Total Spent</div>
+                            <div class="text-2xl font-bold">$4,521</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="text-gray-500">Average Order Value</div>
+                            <div class="text-2xl font-bold">$188</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold mb-4">Recent Orders</h3>
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b">
+                                    <th class="text-left py-2">Order ID</th>
+                                    <th class="text-left py-2">Date</th>
+                                    <th class="text-left py-2">Items</th>
+                                    <th class="text-left py-2">Total</th>
+                                    <th class="text-left py-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2">#ORD-2023045</td>
+                                    <td>Oct 25, 2023</td>
+                                    <td>3 items</td>
+                                    <td>$245.00</td>
+                                    <td>
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                            Delivered
+                                        </span>
+                                    </td>
+                                </tr>
+                                <!-- Add more order rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Customer Notes -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold mb-4">Customer Notes</h3>
+                        <div class="space-y-4">
+                            <div class="border-b pb-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <p class="text-gray-800">Prefers evening delivery</p>
+                                        <p class="text-sm text-gray-500">Added by: Admin</p>
+                                    </div>
+                                    <span class="text-sm text-gray-500">Oct 20, 2023</span>
+                                </div>
+                            </div>
+                            <!-- Add more notes as needed -->
+                        </div>
+                        <button class="mt-4 text-blue-500 hover:text-blue-600">
+                            <i class="fas fa-plus mr-2"></i>Add Note
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

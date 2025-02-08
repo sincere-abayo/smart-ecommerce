@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Details - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Shipment Details</h1>
+                    <p class="text-gray-600">Tracking #: 1Z999AA1234567890</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                        <i class="fas fa-print mr-2"></i>Print Label
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        <i class="fas fa-edit mr-2"></i>Update Status
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Shipment Info -->
+                <div class="col-span-2 space-y-6">
+                    <!-- Status Timeline -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Tracking History</h2>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-truck text-white"></i>
+                                    </div>
+                                    <div class="h-full border-l-2 border-blue-200 ml-4"></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-medium">In Transit</h3>
+                                    <p class="text-sm text-gray-500">Oct 26, 2023 - 10:30 AM</p>
+                                    <p class="text-sm text-gray-600 mt-1">Package is in transit to destination</p>
+                                    <p class="text-sm text-gray-600">Location: New York, NY</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-box text-white"></i>
+                                    </div>
+                                    <div class="h-full border-l-2 border-green-200 ml-4"></div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-medium">Picked Up</h3>
+                                    <p class="text-sm text-gray-500">Oct 25, 2023 - 2:15 PM</p>
+                                    <p class="text-sm text-gray-600 mt-1">Package has been picked up by carrier</p>
+                                    <p class="text-sm text-gray-600">Location: Los Angeles, CA</p>
+                                </div>
+                            </div>
+
+                            <div class="flex">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-tag text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="font-medium">Label Created</h3>
+                                    <p class="text-sm text-gray-500">Oct 25, 2023 - 9:00 AM</p>
+                                    <p class="text-sm text-gray-600 mt-1">Shipping label has been created</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package Details -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Package Details</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-gray-600">Weight</p>
+                                <p class="font-medium">2.5 lbs</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Dimensions</p>
+                                <p class="font-medium">12" × 8" × 6"</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Service Type</p>
+                                <p class="font-medium">UPS Ground</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Estimated Delivery</p>
+                                <p class="font-medium">Oct 28, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Info -->
+                <div class="space-y-6">
+                    <!-- Order Info -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Order Information</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm text-gray-600">Order Number</p>
+                                <p class="font-medium">#ORD-2023001</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Order Date</p>
+                                <p class="font-medium">Oct 25, 2023</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Items</p>
+                                <p class="font-medium">2 items</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Info -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Shipping Address</h2>
+                        <div class="space-y-2">
+                            <p class="font-medium">John Doe</p>
+                            <p>123 Main Street</p>
+                            <p>Apt 4B</p>
+                            <p>New York, NY 10001</p>
+                            <p>United States</p>
+                            <p class="text-sm text-gray-600 mt-2">Phone: +1 234 567 890</p>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Shipping Notes</h2>
+                        <p class="text-gray-600">Leave package at front door if no answer.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

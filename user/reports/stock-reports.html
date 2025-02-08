@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Reports - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Stock Reports</h1>
+                    <p class="text-gray-600">Monitor your inventory levels and stock movements</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-white text-gray-600 rounded-lg hover:bg-gray-50 border">
+                        <i class="fas fa-filter mr-2"></i>Filter
+                    </button>
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                        <i class="fas fa-file-excel mr-2"></i>Export Excel
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stock Overview -->
+            <div class="grid grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Total Products</p>
+                            <h3 class="text-2xl font-bold">1,245</h3>
+                            <p class="text-green-500 text-sm"><i class="fas fa-plus"></i> 23 New</p>
+                        </div>
+                        <i class="fas fa-box text-3xl text-blue-500"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Low Stock Items</p>
+                            <h3 class="text-2xl font-bold">28</h3>
+                            <p class="text-red-500 text-sm"><i class="fas fa-exclamation-triangle"></i> Alert</p>
+                        </div>
+                        <i class="fas fa-battery-quarter text-3xl text-red-500"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Out of Stock</p>
+                            <h3 class="text-2xl font-bold">12</h3>
+                            <p class="text-orange-500 text-sm"><i class="fas fa-clock"></i> Pending</p>
+                        </div>
+                        <i class="fas fa-times-circle text-3xl text-orange-500"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Stock Value</p>
+                            <h3 class="text-2xl font-bold">$342,890</h3>
+                            <p class="text-blue-500 text-sm"><i class="fas fa-chart-line"></i> Total</p>
+                        </div>
+                        <i class="fas fa-dollar-sign text-3xl text-green-500"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Stock Level Chart -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Stock Levels by Category</h2>
+                    <canvas id="stockLevelChart" height="300"></canvas>
+                </div>
+
+                <!-- Stock Movement Chart -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-lg font-semibold mb-4">Stock Movement Trend</h2>
+                    <canvas id="stockMovementChart" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- Low Stock Alert Table -->
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="p-6 border-b">
+                    <h2 class="text-lg font-semibold">Low Stock Alerts</h2>
+                </div>
+                <table class="min-w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">SKU</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Current Stock</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Reorder Level</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img src="https://via.placeholder.com/40" alt="Product" class="w-10 h-10 rounded">
+                                    <div class="ml-4">
+                                        <div class="font-medium">Wireless Earbuds</div>
+                                        <div class="text-sm text-gray-500">Electronics</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">WE-001</td>
+                            <td class="px-6 py-4">5</td>
+                            <td class="px-6 py-4">20</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                    Critical
+                                </span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="text-blue-600 hover:text-blue-900">Reorder</button>
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Stock Level Chart
+        const stockLevelCtx = document.getElementById('stockLevelChart').getContext('2d');
+        new Chart(stockLevelCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Electronics', 'Clothing', 'Accessories', 'Home', 'Beauty'],
+                datasets: [{
+                    label: 'Current Stock',
+                    data: [450, 320, 280, 200, 180],
+                    backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                    borderColor: 'rgb(59, 130, 246)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Stock Movement Chart
+        const stockMovementCtx = document.getElementById('stockMovementChart').getContext('2d');
+        new Chart(stockMovementCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Stock In',
+                    data: [100, 120, 90, 150, 80, 110],
+                    borderColor: 'rgb(16, 185, 129)',
+                    tension: 0.1
+                }, {
+                    label: 'Stock Out',
+                    data: [80, 100, 85, 130, 75, 95],
+                    borderColor: 'rgb(239, 68, 68)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+</html>

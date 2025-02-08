@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Process Payment</h1>
+                    <p class="text-gray-600">Order #ORD-2023001</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">
+                        <i class="fas fa-times mr-2"></i>Cancel
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        <i class="fas fa-save mr-2"></i>Save Draft
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Payment Form -->
+                <div class="col-span-2 space-y-6">
+                    <!-- Payment Method Selection -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Payment Method</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 border rounded-lg">
+                                <input type="radio" name="payment_method" class="mr-3" checked>
+                                <div class="flex-1">
+                                    <div class="flex items-center">
+                                        <i class="fab fa-cc-visa text-blue-600 text-2xl mr-2"></i>
+                                        <span class="font-medium">Credit Card</span>
+                                    </div>
+                                    <p class="text-sm text-gray-500 mt-1">Safe money transfer using your bank account</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center p-4 border rounded-lg">
+                                <input type="radio" name="payment_method" class="mr-3">
+                                <div class="flex-1">
+                                    <div class="flex items-center">
+                                        <i class="fab fa-paypal text-blue-800 text-2xl mr-2"></i>
+                                        <span class="font-medium">PayPal</span>
+                                    </div>
+                                    <p class="text-sm text-gray-500 mt-1">You will be redirected to PayPal website</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center p-4 border rounded-lg">
+                                <input type="radio" name="payment_method" class="mr-3">
+                                <div class="flex-1">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-university text-gray-600 text-2xl mr-2"></i>
+                                        <span class="font-medium">Bank Transfer</span>
+                                    </div>
+                                    <p class="text-sm text-gray-500 mt-1">Make payment directly from your bank account</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credit Card Form -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Card Details</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                <input type="text" placeholder="1234 5678 9012 3456" 
+                                    class="w-full px-4 py-2 border rounded-lg">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                                    <input type="text" placeholder="MM/YY" 
+                                        class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                    <input type="text" placeholder="123" 
+                                        class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Card Holder Name</label>
+                                <input type="text" placeholder="John Doe" 
+                                    class="w-full px-4 py-2 border rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Address -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Billing Address</h2>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                    <input type="text" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                    <input type="text" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg">
+                            </div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">City</label>
+                                    <input type="text" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">State</label>
+                                    <input type="text" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">ZIP Code</label>
+                                    <input type="text" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-lg font-semibold mb-4">Order Summary</h2>
+                        <div class="space-y-4">
+                            <div class="flex justify-between pb-4 border-b">
+                                <span class="text-gray-600">Subtotal</span>
+                                <span class="font-medium">$299.00</span>
+                            </div>
+                            <div class="flex justify-between pb-4 border-b">
+                                <span class="text-gray-600">Shipping</span>
+                                <span class="font-medium">$10.00</span>
+                            </div>
+                            <div class="flex justify-between pb-4 border-b">
+                                <span class="text-gray-600">Tax</span>
+                                <span class="font-medium">$29.90</span>
+                            </div>
+                            <div class="flex justify-between text-lg font-bold">
+                                <span>Total</span>
+                                <span>$338.90</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Process Payment Button -->
+                    <button class="w-full px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                        <i class="fas fa-lock mr-2"></i>Process Payment
+                    </button>
+
+                    <!-- Security Notice -->
+                    <div class="text-center text-sm text-gray-500">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Your payment information is secure and encrypted
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

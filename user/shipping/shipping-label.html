@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Label - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto bg-white p-8 shadow-md">
+        <!-- Print Button -->
+        <div class="print:hidden mb-4 text-right">
+            <button onclick="window.print()" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                <i class="fas fa-print mr-2"></i>Print Label
+            </button>
+        </div>
+
+        <!-- Label Content -->
+        <div class="border-2 border-black p-4">
+            <!-- Carrier Info -->
+            <div class="text-center mb-4">
+                <h1 class="text-2xl font-bold">UPS Ground</h1>
+                <p class="text-sm">Tracking #: 1Z999AA1234567890</p>
+            </div>
+
+            <!-- Shipping Barcode -->
+            <div class="text-center mb-4">
+                <img src="https://via.placeholder.com/400x100" alt="Barcode" class="mx-auto">
+            </div>
+
+            <!-- Addresses -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <!-- From Address -->
+                <div>
+                    <h2 class="font-bold mb-2 text-sm">FROM:</h2>
+                    <div class="text-sm">
+                        <p>E-commerce Store</p>
+                        <p>456 Warehouse Ave</p>
+                        <p>Los Angeles, CA 90001</p>
+                        <p>United States</p>
+                        <p>Phone: (555) 123-4567</p>
+                    </div>
+                </div>
+
+                <!-- To Address -->
+                <div>
+                    <h2 class="font-bold mb-2 text-sm">SHIP TO:</h2>
+                    <div class="text-sm font-bold">
+                        <p>John Doe</p>
+                        <p>123 Main Street</p>
+                        <p>Apt 4B</p>
+                        <p>New York, NY 10001</p>
+                        <p>United States</p>
+                        <p>Phone: +1 234 567 890</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Details -->
+            <div class="border-t-2 border-black pt-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm"><strong>Weight:</strong> 2.5 lbs</p>
+                        <p class="text-sm"><strong>Dimensions:</strong> 12" × 8" × 6"</p>
+                    </div>
+                    <div>
+                        <p class="text-sm"><strong>Ship Date:</strong> Oct 25, 2023</p>
+                        <p class="text-sm"><strong>Order #:</strong> ORD-2023001</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Instructions -->
+            <div class="mt-4 text-sm">
+                <p><strong>Special Instructions:</strong> Leave package at front door if no answer.</p>
+            </div>
+        </div>
+
+        <!-- QR Code -->
+        <div class="mt-4 text-center">
+            <img src="https://via.placeholder.com/100" alt="QR Code" class="mx-auto">
+            <p class="text-sm text-gray-600 mt-2">Scan for tracking updates</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* Base styles */
+.cart-overlay {
+    transition: transform 0.3s ease-in-out;
+}
+
+.notification {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Cart notification styles */
+.cart-notification {
+    transition: all 0.3s ease;
+}
