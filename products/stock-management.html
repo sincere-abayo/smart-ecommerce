@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Management - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-gray-800">E-commerce</h1>
+            </div>
+            <nav class="mt-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="../index.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-home mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../products/products-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-box mr-3"></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../orders/orders-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../customers/customers-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payments/payments-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../shipping/shipping-list.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-truck mr-3"></i>
+                            Delivery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../reports/sales-reports.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 flex-1 p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-800">Stock Management</h1>
+                <div class="flex space-x-4">
+                    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                        <i class="fas fa-file-export mr-2"></i>Export Stock Report
+                    </button>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        <i class="fas fa-plus mr-2"></i>Add Stock
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stock Overview Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Total Products</p>
+                            <h3 class="text-2xl font-bold">1,234</h3>
+                        </div>
+                        <i class="fas fa-box text-3xl text-blue-500"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Low Stock Items</p>
+                            <h3 class="text-2xl font-bold text-yellow-500">23</h3>
+                        </div>
+                        <i class="fas fa-exclamation-triangle text-3xl text-yellow-500"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Out of Stock</p>
+                            <h3 class="text-2xl font-bold text-red-500">12</h3>
+                        </div>
+                        <i class="fas fa-times-circle text-3xl text-red-500"></i>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-gray-500">Stock Value</p>
+                            <h3 class="text-2xl font-bold">$45,678</h3>
+                        </div>
+                        <i class="fas fa-dollar-sign text-3xl text-green-500"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stock Management Table -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-4 border-b">
+                    <div class="flex justify-between items-center">
+                        <input type="text" placeholder="Search products..." 
+                            class="px-4 py-2 border rounded-lg w-64">
+                        <div class="flex space-x-4">
+                            <select class="px-4 py-2 border rounded-lg">
+                                <option value="">All Categories</option>
+                                <option>Electronics</option>
+                                <option>Clothing</option>
+                                <option>Books</option>
+                            </select>
+                            <select class="px-4 py-2 border rounded-lg">
+                                <option value="">Stock Status</option>
+                                <option>In Stock</option>
+                                <option>Low Stock</option>
+                                <option>Out of Stock</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Product</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">SKU</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Category</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Current Stock</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Min Stock</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Sample row -->
+                        <tr>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/40" alt="">
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">iPhone 13 Pro</div>
+                                        <div class="text-sm text-gray-500">Apple</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">IP13-PRO-256</td>
+                            <td class="px-6 py-4">Electronics</td>
+                            <td class="px-6 py-4">45</td>
+                            <td class="px-6 py-4">10</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                    In Stock
+                                </span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <button class="text-blue-600 hover:text-blue-900 mr-3">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="text-red-600 hover:text-red-900">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
